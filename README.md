@@ -9,27 +9,24 @@
 
 ## 使用
 
+查看设备管理器中USB-Enhanced-SERIAL CH9102设备的端口号。我的是COM9。因此在代码中修改端口号为COM9。
+```python
+    # 初始化 Board
+    board = Board(device="COM9")
+```
+
+### 舵机
+
+修改`position`变量的值，设置舵机的角度，范围为0-180度
+
 运行舵机示例
 ```shell
 python3 examples/servo_example.py
 ```
 
-## 功能
+### IMU
 
-列出项目的主要功能和特点。
-
-## 示例
-
-提供更多示例代码和说明，以帮助用户更好地理解项目的使用。
-
-## 贡献
-
-描述如何为项目做出贡献，包括提交错误报告、提出功能请求和创建拉取请求等。
-
-## 许可证
-
-指明项目的许可证类型。
-
-## 作者
-
-列出项目的作者和联系方式。
+运行IMU示例
+```shell
+python3 .\examples\imu_example.py
+```

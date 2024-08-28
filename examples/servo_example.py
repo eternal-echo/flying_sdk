@@ -12,14 +12,14 @@ import time
 
 def simple_pwm_servo_test():
     # 初始化 Board
-    board = Board()
+    board = Board(device="COM9")
     
     # 开启接收线程
     board.enable_reception()
     
     # 控制舵机位置
     servo_id = 1  # 假设控制舵机 1
-    position = 1500  # 设置舵机位置，范围为0-180度，通常1ms-2ms (500-2500)
+    position = 2500  # 设置舵机位置，范围为0-180度，通常1ms-2ms (500-2500)
 
     # 设定舵机位置并读取偏移与位置
     board.pwm_servo_set_position(0.5, [[servo_id, position]])
@@ -32,9 +32,6 @@ def simple_pwm_servo_test():
     # 读取舵机当前位置
     current_position = board.pwm_servo_read_position(servo_id)
     print(f"Servo {servo_id} Current Position: {current_position}")
-    
-    # 等待一段时间以观察效果
-    time.sleep(2)
 
 if __name__ == "__main__":
     simple_pwm_servo_test()
